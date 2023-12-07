@@ -37,9 +37,12 @@ function moveFrog(e) {
 
 document.addEventListener("keyup", moveFrog);
 
-function autoMoveLogs() {
+function autoMoveElements() {
   logsLeft.forEach((logLeft) => moveLogLeft(logLeft));
   logsRight.forEach((logRight) => moveLogright(logRight));
+  carsLeft.forEach((carLeft) => moveLogright(carLeft));
+  carsRight.forEach((carRight) => moveLogright(carRight));
+
 }
 
 function checkResult(){
@@ -106,6 +109,9 @@ function moveLogright(logRight) {
 }
 
 setInterval(autoMoveLogs, 1000);
+
+function moveCarLeft
+
  function win(){
     if(squares[currentIndex].)
  }
