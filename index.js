@@ -42,6 +42,10 @@ function autoMoveLogs() {
   logsRight.forEach((logRight) => moveLogright(logRight));
 }
 
+function checkResult(){
+    win()
+    lose()
+}
 
 function moveLogLeft(logLeft) {
   switch (true) {
@@ -102,3 +106,6 @@ function moveLogright(logRight) {
 }
 
 setInterval(autoMoveLogs, 1000);
+ function win(){
+    if(squares[currentIndex].)
+ }
