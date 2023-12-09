@@ -35,7 +35,7 @@ function moveFrog(e) {
   squares[currentIndex].classList.add("frog");
 }
 
-document.addEventListener("keyup", moveFrog);
+
 
 function autoMoveElements() {
   logsLeft.forEach((logLeft) => moveLogLeft(logLeft));
@@ -147,7 +147,7 @@ function moveCarRight(carRight) {
     }
   }
 
-setInterval(autoMoveLogs, 1000);
+
 
 function lose(){
     if(squares[currentIndex].classList.contains('c1') || squaresquares[currentIndex].classList.contains('l4') || squaresquares[currentIndex].classList.contains('l5') || currentTime <= 0){
@@ -166,3 +166,13 @@ function lose(){
 
     }
  }
+
+ startPauseButton.addEventListener('click', () => {
+    if(timerId){clearInterval(timerId)
+    } else {
+        timerId = setInterval(autoMoveLogs, 1000);
+        document.addEventListener('keyup',moveFrog)
+}
+ })
+
+ timerId = setInterval(autoMoveElements, 1000);
