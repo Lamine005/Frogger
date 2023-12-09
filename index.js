@@ -168,9 +168,14 @@ function lose(){
  }
 
  startPauseButton.addEventListener('click', () => {
-    if(timerId){clearInterval(timerId)
+    if(timerId){
+        clearInterval(timerId)
+        timerId = null
+        document.removeEventListener('keyup',moveFrog)
+
     } else {
         timerId = setInterval(autoMoveLogs, 1000);
+        outcomeTimerId = setInterval(checkResult, 60)
         document.addEventListener('keyup',moveFrog)
 }
  })
