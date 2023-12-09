@@ -153,6 +153,7 @@ function lose(){
     if(squares[currentIndex].classList.contains('c1') || squaresquares[currentIndex].classList.contains('l4') || squaresquares[currentIndex].classList.contains('l5') || currentTime <= 0){
         resultDisplay.textContent = 'you lose'
         clearInterval(timerId)
+        clearInterval(outcomeTimerId)
         squares[currentIndex].classList.remove('frog')
         document.removeEventListener('keyup',moveFrog)
     }
@@ -162,6 +163,7 @@ function lose(){
     if(squares[currentIndex].classList.contains('ending-block')){
         resultDisplay.textContent = 'You win'
         clearInterval(timerId)
+        clearInterval(outcomeTimerId)
         document.removeEventListener('keyup',moveFrog)
 
     }
@@ -171,6 +173,7 @@ function lose(){
     if(timerId){
         clearInterval(timerId)
         timerId = null
+        outcomeTimerId = null
         document.removeEventListener('keyup',moveFrog)
 
     } else {
