@@ -108,10 +108,61 @@ function moveLogright(logRight) {
   }
 }
 
+function moveCarLeft(carLeft) {
+    switch (true) {
+      case carLeft.classList.contains("l1"):
+        carLeft.classList.remove("l1");
+        carLeft.classList.add("l2");
+        break;
+  
+      case carLeft.classList.contains("l2"):
+        carLeft.classList.remove("l2");
+        carLeft.classList.add("l3");
+        break;
+  
+      case carLeft.classList.contains("l3"):
+        carLeft.classList.remove("l3");
+        carLeft.classList.add("l1");
+        break;
+
+    }
+  }
+function moveCarRight(carRight) {
+    switch (true) {
+      case carRight.classList.contains("l1"):
+        carRight.classList.remove("l1");
+        carRight.classList.add("l3");
+        break;
+  
+      case carRight.classList.contains("l2"):
+        carRight.classList.remove("l2");
+        carRight.classList.add("l1");
+        break;
+  
+      case carRight.classList.contains("l3"):
+        carRight.classList.remove("l3");
+        carRight.classList.add("l2");
+        break;
+
+    }
+  }
+
 setInterval(autoMoveLogs, 1000);
 
-function moveCarLeft
+function lose(){
+    if(squares[currentIndex].classList.contains('c1') || squaresquares[currentIndex].classList.contains('l4') || squaresquares[currentIndex].classList.contains('l5') || currentTime <= 0){
+        resultDisplay.textContent = 'you lose'
+        clearInterval(timerId)
+        squares[currentIndex].classList.remove('frog')
+        document.removeEventListener('keyup',moveFrog)
+    }
+}
 
- function win(){
-    if(squares[currentIndex].)
+ function win() {
+    if(squares[currentIndex].classList.contains('ending-block')){
+        resultDisplay.textContent = 'You win'
+        clearInterval(timerId)
+        document.removeEventListener('keyup',moveFrog)
+
+    }
  }
