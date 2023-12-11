@@ -13,6 +13,7 @@ let timerId;
 let outcomeTimerId;
 let currentTime = 20;
 
+//moving the Frog
 function moveFrog(e) {
     squares[currentIndex].classList.remove("frog");
 
@@ -33,7 +34,7 @@ function moveFrog(e) {
     squares[currentIndex].classList.add("frog");
 }
 
-
+// constantly moving elements automatically
 
 function autoMoveElements() {
     logsLeft.forEach((logLeft) => moveLogLeft(logLeft));
@@ -42,11 +43,13 @@ function autoMoveElements() {
     carsRight.forEach((carRight) => moveCarRight(carRight));
 }
 
+//refactor in one method to Check win or loss
 function checkResult() {
     win();
     lose();
 }
 
+//moving log to the left
 function moveLogLeft(logLeft) {
   switch (true) {
     case logLeft.classList.contains("l1"):
@@ -76,6 +79,7 @@ function moveLogLeft(logLeft) {
   }
 }
 
+//moving log to the right
 function moveLogright(logRight) {
   switch (true) {
     case logRight.classList.contains("l1"):
@@ -105,6 +109,7 @@ function moveLogright(logRight) {
   }
 }
 
+//moving car to the left
 function moveCarLeft(carLeft) {
     switch (true) {
       case carLeft.classList.contains("c1"):
@@ -125,7 +130,7 @@ function moveCarLeft(carLeft) {
     }
   }
 
-  //moving car on the right
+  //moving car to the right
 function moveCarRight(carRight) {
     switch (true) {
       case carRight.classList.contains("c1"):
