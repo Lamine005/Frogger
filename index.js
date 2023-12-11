@@ -124,6 +124,8 @@ function moveCarLeft(carLeft) {
 
     }
   }
+
+  //moving car on the right
 function moveCarRight(carRight) {
     switch (true) {
       case carRight.classList.contains("c1"):
@@ -145,7 +147,7 @@ function moveCarRight(carRight) {
   }
 
 
-
+//Check When User loses
   function lose() {
     if (squares[currentIndex].classList.contains('c1') || 
         squares[currentIndex].classList.contains('l4') || 
@@ -159,6 +161,8 @@ function moveCarRight(carRight) {
     }
 }
 
+// check When user win
+
 function win() {
     if (squares[currentIndex].classList.contains('ending-block')) {
         resultDisplay.textContent = 'You win';
@@ -168,6 +172,7 @@ function win() {
     }
 }
 
+// Start/pause method
 startPauseButton.addEventListener('click', () => {
     if (timerId) {
         clearInterval(timerId);
